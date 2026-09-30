@@ -10,94 +10,31 @@
 
 ---
 
-## 1. Product Vision & Story
+## About the Project
 
-Existing digital assistants (Siri, ChatGPT, Alexa) answer isolated, transactional questions, but **they do not continuously understand the person behind those questions**.
+**HumanTwin AI** is an AI-powered personal Digital Twin designed to understand a user's goals, preferences, routines, tasks, deadlines, and behavioral patterns.
 
-**HumanTwin AI** creates an evolving digital representation of the user based **only** on information the user explicitly provides or permits the system to use. It is designed as a **decision-support platform**, NOT an autonomous system that makes decisions for the user. The human remains in full control at all times.
+The system helps users make better day-to-day decisions by:
+- Building a personalized Digital Twin from permitted user data
+- Identifying meaningful behavioral patterns
+- Simulating **What-If** scenarios before decisions are made
+- Comparing possible outcomes, risks, and available time
+- Providing explainable, personalized decision support
+- Learning from explicit user feedback
+- Giving users control over which data categories the Digital Twin can use
 
-### Core Capabilities
+HumanTwin AI is designed as a **decision-support system**, not an autonomous system. The user remains in control of all decisions and data permissions.
 
-1. **Context Understanding**: Synthesizes active workload, stated goals, daily calendar anchors, and study pacing.
-2. **Behavioral Pattern Recognition**: Inferences habits (e.g. session length thresholds, deadline proximity patterns) from real historical logs rather than inventing assumptions.
-3. **What-If Simulation**: Compares prospective decisions before you commit, calculating realistic available hours, conflict risks, and deadline pressures.
-4. **Active Learning Feedback Loop**: Captures explicit user feedback (`👍 Yes` / `👎 No`), updating underlying decision rules live in the model (`Before` vs `After` rule tracking).
-5. **Zero-Leakage Privacy Control**: Fine-grained permissions over 8 data categories with one-click data deletion and twin resets.
+### Key Features
 
----
-
-## 2. Hackathon Demo Scenario (Arjun)
-
-The system comes pre-configured with a synthetic engineering student named **Arjun**:
-
-* **Goals**: Score well in upcoming exams, complete assignments on time, maintain consistent sleep (7.5–8 hrs), improve programming skills.
-* **Routine**:
-  * College Lectures & Labs: `9:00 AM – 4:00 PM` (Mon–Fri)
-  * Campus Buffer / Transit: `4:00 PM – 6:00 PM`
-  * Evening Study Window: `6:00 PM – 9:00 PM` (3.0 hours available study capacity)
-  * Dinner & Wind Down: `9:00 PM – 10:30 PM`
-  * Sleep: `10:30 PM – 6:30 AM` (Non-negotiable health anchor)
-* **Upcoming Deadlines**:
-  1. **Physics Assignment**: Due **October 2** (4.0 hrs required, High Priority)
-  2. **Mathematics Exam**: Due **October 4** (8.0 hrs required, 45% prepared, High Priority)
-  3. **Programming Assignment**: Due **October 6** (5.0 hrs required, Medium Priority)
-* **Historical Patterns (System-Inferred)**:
-  * Studies 2–3 hours on weekdays in the evening.
-  * Historical volume increases by ~45% in the 72h window before exams.
-  * Often delays assignments until close to the deadline.
-  * Completes sessions more consistently when limited to 60–90 minutes with breaks.
-  * Tends to underestimate assignment completion time by ~20%.
-
----
-
-## 3. The 9-Step Hackathon Presentation Flow
-
-Follow this exact live presentation flow (also accessible via the top walkthrough banner in the UI):
-
-1. **Step 1: Open HumanTwin AI**
-   * Review the header: `"Your Digital Twin currently understands 7 preferences, 4 goals, 3 tasks, and 5 behavioral patterns."`
-   * Observe confidence rating (`88% Calibrated`) and privacy status (`Controlled by you`).
-
-2. **Step 2: Inspect "What Does My Twin Know About Me?"**
-   * Navigate to the **What Twin Knows** tab.
-   * View the distinct labeling: `[User-Provided]`, `[System-Inferred]`, `[Learned from Feedback]`.
-
-3. **Step 3: Launch What-If Simulator**
-   * Ask: *"What will happen if I spend the next two days preparing for my Mathematics exam instead of working on my Physics assignment?"*
-
-4. **Step 4: Compare Side-by-Side Scenarios**
-   * **Scenario A (Focus on Math Exam)**: Math reaches 85% readiness, but Physics is postponed. **High Risk** due to October 2 deadline collision with 9 AM – 4 PM college hours.
-   * **Scenario B (Complete Physics First)**: Physics 100% completed & submitted. Math prep paces across Oct 2 evening and Oct 3. **Low Risk** for Physics / **Moderate Risk** for Math.
-
-5. **Step 5: Review Personalized Recommendation & Explainability**
-   * System recommends a balanced schedule:
-     * `6:00 PM – 7:30 PM` → Mathematics Exam Prep (90 min focused session)
-     * `7:30 PM – 7:45 PM` → Rest Break (15 min)
-     * `7:45 PM – 8:45 PM` → Physics Assignment (60 min)
-     * `8:45 PM – 9:00 PM` → Review & Tomorrow's Plan (15 min)
-   * Click **"Why am I seeing this recommendation?"** to inspect all 7 grounded factors.
-
-6. **Step 6: User Provides Feedback**
-   * Click **"👎 No, I would choose differently"**.
-   * Select: *"I would still choose the assignment first."*
-
-7. **Step 7: Provide Feedback Reason**
-   * Select: *"The assignment deadline is more important to me."*
-   * Click **Submit & Update Twin**.
-
-8. **Step 8: Observe Live Twin Update ✓**
-   * The **Twin Updated ✓** banner appears immediately showing:
-     * **BEFORE FEEDBACK**: `"User tends to prioritize upcoming exams or balanced splitting."`
-     * **AFTER FEEDBACK**: `"When an assignment deadline is within 48 hours, prioritize the assignment even when an exam is approaching."`
-
-9. **Step 9: Dynamic Re-Evaluation (The "Aha!" Moment)**
-   * Click **"Re-Simulate with Updated Twin"**.
-   * The system dynamically updates its recommendation:
-     * Recommendation now selects **Scenario B** (Physics first) because of your newly learned priority rule!
-     * Practical schedule shifts to allocating `6:00 PM – 8:45 PM` directly to Physics!
-
----
-
+- 🧠 **Digital Twin Dashboard**
+- 🔮 **What-If Scenario Simulator**
+- 📊 **Behavioral Pattern Recognition**
+- 💬 **Chat with Your Digital Twin**
+- 🔄 **Feedback-Based Learning**
+- 🔐 **Privacy & Data Control**
+- 💡 **Explainable Recommendations**
+- 🎓 **Synthetic Student Demo Mode**
 ## 4. Architecture & Tech Stack
 
 ```
