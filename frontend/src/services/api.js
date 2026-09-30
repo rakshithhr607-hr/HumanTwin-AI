@@ -3,7 +3,7 @@
  * Communicates with FastAPI backend with error handling and fallback support.
  */
 
-const BASE_URL = '/api';
+const BASE_URL = import.meta.env.VITE_API_URL || '/api';
 
 async function request(endpoint, options = {}) {
   try {
