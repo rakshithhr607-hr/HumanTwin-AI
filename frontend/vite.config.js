@@ -6,12 +6,16 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
 
   server: {
-  proxy: {
-    '/api': {
-      target: 'http://127.0.0.1:8000',
-      changeOrigin: true,
-      secure: false,
+    proxy: {
+      '/api': {
+        target: 'http://127.0.0.1:8000',
+        changeOrigin: true,
+        secure: false,
+      },
     },
   },
-},
+
+  preview: {
+    allowedHosts: ['humantwin-ai-1.onrender.com'],
+  },
 })
