@@ -7,6 +7,7 @@ import KnowledgeBaseTab from "./pages/KnowledgeBaseTab";
 import ChatTab from "./pages/ChatTab";
 import DataControlTab from "./pages/DataControlTab";
 import InsightsTab from "./pages/InsightsTab";
+import GoalsTasksTab from "./pages/GoalsTasksTab";
 
 function App() {
   const [overview, setOverview] = useState(null);
@@ -321,16 +322,10 @@ function App() {
 
             {/* GOALS & TASKS */}
             {activeTab === "goals" && (
-              <DashboardTab
-                overview={overview}
-                onNavigateToWhatIf={navigateToWhatIf}
-                onRunPresetWhatIf={navigateToWhatIf}
-                onNavigateToKnowledge={navigateToKnowledge}
-                onNavigateToChat={navigateToChat}
-              />
+              <GoalsTasksTab overview={overview} />
             )}
 
-            {/* INSIGHTS - FIXED */}
+            {/* INSIGHTS */}
             {activeTab === "insights" && (
               <InsightsTab overview={overview} />
             )}
