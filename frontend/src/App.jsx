@@ -6,6 +6,7 @@ import WhatIfTab from "./pages/WhatIfTab";
 import KnowledgeBaseTab from "./pages/KnowledgeBaseTab";
 import ChatTab from "./pages/ChatTab";
 import DataControlTab from "./pages/DataControlTab";
+import InsightsTab from "./pages/InsightsTab";
 
 function App() {
   const [overview, setOverview] = useState(null);
@@ -307,6 +308,7 @@ function App() {
           {/* PAGE CONTENT */}
           <div className="px-8 pb-12 pt-8">
 
+            {/* DASHBOARD */}
             {activeTab === "dashboard" && (
               <DashboardTab
                 overview={overview}
@@ -317,6 +319,7 @@ function App() {
               />
             )}
 
+            {/* GOALS & TASKS */}
             {activeTab === "goals" && (
               <DashboardTab
                 overview={overview}
@@ -327,22 +330,19 @@ function App() {
               />
             )}
 
+            {/* INSIGHTS - FIXED */}
             {activeTab === "insights" && (
-              <DashboardTab
-                overview={overview}
-                onNavigateToWhatIf={navigateToWhatIf}
-                onRunPresetWhatIf={navigateToWhatIf}
-                onNavigateToKnowledge={navigateToKnowledge}
-                onNavigateToChat={navigateToChat}
-              />
+              <InsightsTab overview={overview} />
             )}
 
+            {/* MY TWIN */}
             {activeTab === "knowledge" && (
               <KnowledgeBaseTab
                 overview={overview}
               />
             )}
 
+            {/* WHAT-IF */}
             {activeTab === "what-if" && (
               <WhatIfTab
                 overview={overview}
@@ -352,6 +352,7 @@ function App() {
               />
             )}
 
+            {/* CHAT */}
             {activeTab === "chat" && (
               <ChatTab
                 overview={overview}
@@ -359,6 +360,7 @@ function App() {
               />
             )}
 
+            {/* PRIVACY */}
             {activeTab === "privacy" && (
               <DataControlTab
                 overview={overview}
